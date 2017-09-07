@@ -17,10 +17,10 @@ func init() {
 
 }
 func main() {
-	orm.Debug = true
+	orm.Debug = false
 	orm.RunSyncdb("default", false, true)
 	// o := orm.NewOrm()
-	// o.Using("default")
+	// o.Using("default")//默认使用default，可以不屑
 	beego.SetStaticPath("static", "static")
 	beego.Run()
 }

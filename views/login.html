@@ -4,23 +4,18 @@
 {{template "header"}}
 
 <body>
-    <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="/">首页</a></li>
-                <li><a href="/category">分类</a></li>
-                <li><a href="topic">文章</a></li>
-            </ul>
-        </div>
-        <div class="container">
-            <div class="page-header">
-                <h1>我的第一篇博客</h1>
-                <h6 class="test-muted">文章发表与2014年X月xx日，共有200次浏览，100个评论</h6>
-                <p>
-                    大家好，这是我的第一篇博客，多谢观看
-                </p>
+    <div class="container" style="width:500px">
+        <form class="navbar-form navbar-left" role="search" method="post">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">用户名：</span>
+                <input type="text" class="form-control" name="username" placeholder="Username" aria-describedby="basic-addon1">
             </div>
-        </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">密&nbsp;&nbsp;&nbsp;&nbsp;码：</span>
+                <input type="password"  name="pwd" class="form-control" placeholder="******" aria-describedby="basic-addon1">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
     </div>
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>

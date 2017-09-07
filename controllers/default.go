@@ -14,4 +14,5 @@ func (c *MainController) Get() {
 	c.Data["TrueCond"] = true
 	c.TplName = "home.html"
 	c.Data["IsHome"] = true
+	c.Data["IsLogin"] = checkAccount(c.Ctx)
 }

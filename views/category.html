@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+{{template "header"}}
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        {{template "navbar" .}}
+        <div class="container" style="width:500px">
+            <h1>分类列表</h1>
+            <form class="navbar-form navbar-left" action="/category" role="search" method="get">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">分类名称：</span>
+                    <input type="text" class="form-control" name="name" placeholder="Username" aria-describedby="basic-addon1">
+                </div>
+                <input name="opt" value="add" type="hidden">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>名称</th>
+                        <th>文章数</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range .Categories}}
+                    <tr>
+                        <td>{{.ID}}</td>
+                        <td>{{.Title}}</td>
+                        <td>{{.TopicCount}}</td>
+                        <td>
+                            <a href="/category?opt=del&id={{.ID}}">删除</a> </td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</body>
+
+</html>
